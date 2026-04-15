@@ -8,7 +8,7 @@ const PatientForm = ({ refreshPatients }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/api/patients', patient);
+            await axios.post('http://localhost:5001/api/patients', patient);
             refreshPatients();
             setPatient({ name: '', age: '', gender: '', contact: '' });
             setError(null);

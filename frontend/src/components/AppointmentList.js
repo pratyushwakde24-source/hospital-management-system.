@@ -12,18 +12,18 @@ const Appointments = () => {
     }, []);
 
     const fetchAppointments = async () => {
-        const res = await axios.get('http://localhost:5000/api/appointments');
+        const res = await axios.get('http://localhost:5001/api/appointments');
         setAppointments(res.data);
     };
 
     const fetchPatients = async () => {
-        const res = await axios.get('http://localhost:5000/api/patients');
+        const res = await axios.get('http://localhost:5001/api/patients');
         setPatients(res.data);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/api/appointments', form);
+        await axios.post('http://localhost:5001/api/appointments', form);
         fetchAppointments();
     };
 
